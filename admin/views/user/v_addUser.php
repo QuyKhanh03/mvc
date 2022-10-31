@@ -54,7 +54,7 @@
                     <!-- ============================================================== -->
                     <!-- create new -->
                     <!-- ============================================================== -->
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
                             <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
@@ -65,15 +65,15 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
-                    </li>
+                    </li> -->
                     <!-- ============================================================== -->
                     <!-- Search -->
                     <!-- ============================================================== -->
-                    <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                    <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                         <form class="app-search position-absolute">
                             <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
                         </form>
-                    </li>
+                    </li> -->
                 </ul>
                 <!-- ============================================================== -->
                 <!-- Right side toggle and nav items -->
@@ -178,16 +178,17 @@
             </div>
         </nav>
     </header>
+
     <aside class="left-sidebar" data-sidebarbg="skin5">
         <!-- Sidebar scroll-->
         <div class="scroll-sidebar">
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="p-t-30">
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="home.php" aria-expanded="false"><span class="hide-menu">Views</span></a></li>
+                    <li class="sidebar-item"> <a style="background: #1F262D;" class="sidebar-link waves-effect waves-dark sidebar-link" href="home.php" aria-expanded="false"><span class="hide-menu">Views</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="product.php" aria-expanded="false"><span class="hide-menu">Products</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="user.php" aria-expanded="false"></i><span class="hide-menu">User</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comment.php" aria-expanded="false"><span class="hide-menu">Comments</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html" aria-expanded="false"><span class="hide-menu">Comments</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="addProduct.php" aria-expanded="false"><span class="hide-menu">Add Product</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="addUser.php" aria-expanded="false"><span class="hide-menu">Add User</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect  waves-dark sidebar-link" href="logout.php?func=exit" aria-expanded="false"></i><span class="hide-menu">Log out</span></a></li>
@@ -196,167 +197,34 @@
             <!-- End Sidebar navigation -->
         </div>
         <!-- End Sidebar scroll-->
+
     </aside>
+    <div class="page-wapper">
 
-    <div class="page-wrapper">
-        <div class="page-breadcrumb">
-            <div class="row">
-                <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Dashboard</h4>
-                    <div class="ml-auto text-right">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Library</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <!-- ============================================================== -->
-            <!-- Sales Cards  -->
-            <!-- ============================================================== -->
-            <div class="row">
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-cyan text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                            <h6 class="text-white">Dashboard</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-success text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
-                            <h6 class="text-white">Charts</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-warning text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
-                            <h6 class="text-white">Widgets</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-danger text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                            <h6 class="text-white">Tables</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-info text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
-                            <h6 class="text-white">Full Width</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <!-- Column -->
-                <div class="col-md-6 col-lg-4 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-danger text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
-                            <h6 class="text-white">Forms</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-info text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
-                            <h6 class="text-white">Buttons</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-cyan text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                            <h6 class="text-white">Elements</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-success text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
-                            <h6 class="text-white">Calnedar</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
-                    <div class="card card-hover">
-                        <div class="box bg-warning text-center">
-                            <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
-                            <h6 class="text-white">Errors</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Column -->
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <canvas  id="myChart" style="width:100%;max-width:600px;margin: auto;" ></canvas>
-                                <script>
-                                    var xValues = [ "Tổng sản phẩm", " Tổng người dùng", "Tổng bình luận","Loại sản phẩm"];
-                                    var yValues = [<?php echo $totalPrd ?>, <?php echo $totalUser ?>, <?php echo $totalCmt ?>,<?php echo $totalCate ?>]
-                                    var barColors = [
-                                        "#b91d47",
-                                        "#00aba9",
-                                        "#2b5797",
-                                        "#e8c3b9",
-            
-                                    ];
-                                    new Chart("myChart", {
-                                        type: "pie",
-                                        data: {
-                                            labels: xValues,
-                                            datasets: [{
-                                                backgroundColor: barColors,
-                                                data: yValues
-                                            }]
-                                        },
-                                        options: {
-                                            title: {
-                                                display: true,
-                                                text: ""
-                                            }
-                                        }
-                                    });
-                                </script>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php
-        echo $totalUser;
-        ?>
-        <footer class="footer text-center">
-            All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
-        </footer>
+        <form class="form" action="" method="POST" enctype="multipart/form-data">
+            <h1>Thêm người dùng</h1>
+            <input type="text" name="ten_nguoi_dung" placeholder="Tên người dùng"> 
+            <input type="text" name="ten_dang_nhap" placeholder="Tên đăng nhập"> 
+            <input type="text" name="mat_khau" placeholder="Mật khẩu"> 
+            <input type="text" name="mat_khau2" placeholder="Nhập lại mật khẩu"> 
+            <input type="submit" value="Thêm" name="btn-submit">
+        </form>
     </div>
-
 </div>
+<style>
+    h1 {
+        margin: 20px 0;
+    }
+
+    .form {
+        width: 575px;
+        margin-left: 280px;
+    }
+
+    .form input {
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+        padding: 10px;
+    }
+</style>

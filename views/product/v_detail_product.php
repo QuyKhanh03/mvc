@@ -1,3 +1,5 @@
+<?php @session_start() ?>
+
 <main>
 
             <!-- breadcrumb-area -->
@@ -223,28 +225,41 @@
                                     </div>
                                     <?php  } ?>
                                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                                        <div class="product-desc-title mb-30">
-                                            <h4 class="title">Reviews (0) :</h4>
-                                        </div>
-                                        <p>Your email address will not be published. Required fields are marked</p>
-                                        <p class="adara-review-title">Be the first to review “Adara”</p>
-                                        <div class="review-rating">
-                                            <span>Your rating *</span>
-                                            <div class="rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                        <?php if (isset($count_bl)) { ?>
+                                            <div class="product-desc-title mb-30">
+                                                <h4 class="title">Reviews (<?php echo $count_bl; ?>) :</h4>
                                             </div>
-                                        </div>
-                                        <iframe src="" frameborder="0" width="100%" style="border: 1px solid #cdcdcd;">
-
-                                        </iframe>
-                                        <form action="#" class="comment-form review-form">
+                                        <?php } else { ?>
+                                            <div class="product-desc-title mb-30">
+                                                <h4 class="title">Reviews (0) :</h4>
+                                            </div>
+                                            <p>Your email address will not be published. Required fields are marked</p>
+                                            <p class="adara-review-title">Be the first to review “Adara”</p>
+                                            <div class="review-rating">
+                                                <span>Your rating *</span>
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if (isset($list_bl)) : ?>
+                                            <?php foreach ($list_bl as $key => $each) { ?>
+                                                <div class="alert alert-primary" role="alert">
+                                                <?php echo $each->noi_dung; ?>
+                                                </div>
+                                                <?php echo $each->thoi_gian ?>
+                                            <?php } ?>
+                                        <?php endif ?>
+                                        <form action="add-cmt.php" class="comment-form review-form" method="POST">
                                             <span>Your review *</span>
                                             <textarea name="message" id="comment-message" placeholder="Your Comment"></textarea>
-                                            <button class="btn">Submit</button>
+                                            <input type="hidden" value="<?php echo $_SESSION['user']->id; ?>" name="user">
+                                            <input type="hidden" value="<?php echo $_GET['id']; ?>" name="product">
+                                            <button class="btn-comment" name="btn-comment">Submit</button>
                                         </form>
                                     </div>
                                 </div>
@@ -260,10 +275,15 @@
                             </div>
                         </div>
                         <div class="row related-product-active">
+                            <?php
+                           
+                            foreach($splq as $key => $value){ 
+    
+                                ?>
                             <div class="col-xl-3">
                                 <div class="new-arrival-item text-center">
                                     <div class="thumb mb-25">
-                                        <a href="shop-details.html"><img src="public/layout/img/product/n_arrival_product01.jpg" alt=""></a>
+                                        <a style="width: 250px; height: 270px;" href="detail.php?id=<?php echo $value->id ?>"><img style="width: 100%; height: 100%;"  src="public/layout/img/product/<?php echo $value->hinh  ?>" alt=""></a>
                                         <div class="product-overlay-action">
                                             <ul>
                                                 <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
@@ -272,64 +292,13 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h5><a href="shop-details.html">Bomber in Cotton</a></h5>
-                                        <span class="price">$37.00</span>
+                                        <h5><a href="detail.php?id=<?php echo $value->id ?>"><?php echo $value->ten_san_pham ?></a></h5>
+                                        <span class="price">$<?php echo $value -> don_gia ?></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3">
-                                <div class="new-arrival-item text-center">
-                                    <div class="thumb mb-25">
-                                        <div class="discount-tag">- 20%</div>
-                                        <a href="shop-details.html"><img src="public/layout/img/product/n_arrival_product02.jpg" alt=""></a>
-                                        <div class="product-overlay-action">
-                                            <ul>
-                                                <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
-                                                <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <h5><a href="shop-details.html">Travelling Bags</a></h5>
-                                        <span class="price">$25.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3">
-                                <div class="new-arrival-item text-center">
-                                    <div class="thumb mb-25">
-                                        <a href="shop-details.html"><img src="public/layout/img/product/n_arrival_product03.jpg" alt=""></a>
-                                        <div class="product-overlay-action">
-                                            <ul>
-                                                <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
-                                                <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <h5><a href="shop-details.html">Exclusive Handbags</a></h5>
-                                        <span class="price">$19.50</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3">
-                                <div class="new-arrival-item text-center">
-                                    <div class="thumb mb-25">
-                                        <div class="discount-tag new">New</div>
-                                        <a href="shop-details.html"><img src="public/layout/img/product/n_arrival_product04.jpg" alt=""></a>
-                                        <div class="product-overlay-action">
-                                            <ul>
-                                                <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
-                                                <li><a href="shop-details.html"><i class="far fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <h5><a href="shop-details.html">Women Shoes</a></h5>
-                                        <span class="price">$12.90</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } ?>
+                            
                         </div>
                     </div>
                 </div>

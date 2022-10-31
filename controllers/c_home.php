@@ -8,5 +8,20 @@ class c_home {
         $view = "views/home/v_home.php";
         include ("templates/front-end/layout.php");
     }
+    // public function index1()
+    // {
+    //     include("models/m_search.php");
+    //         $search = "";
+    //         if (isset($_GET["search"])) {
+    //             $search = $_GET["search"];
+    //             echo $search;
+    //            $m_search = new m_search();
+    //            $result = $m_search->search($search);
+               
+    //            echo print_r("âcks".$result);
+    //         }
+    //     $view = "views/product/v_listprouct.php";
+    //     include("templates/front-end/layout.php");
+    // }
 }
 ?>

@@ -52,17 +52,17 @@
             <div class="col-xl-3 col-lg-4 col-sm-6">
                 <div class="new-arrival-item text-center mb-50">
                     <div class="thumb mb-25">
-                        <a href="v_detail_product.php?id=<?php echo $value->id ?>"><img src="public/layout/img/product/<?php echo $value ->hinh ?>" alt=""></a>
+                        <a style="width: 250px; height: 300px;" href="detail.php?id=<?php echo $value->id ?>"><img style="width: 100%; height: 100%;" src="public/layout/img/product/<?php echo $value ->hinh ?>" alt=""></a>
                         <div class="product-overlay-action">
                             <ul>
                                 <li><a href="cart.php"><i class="far fa-heart"></i></a></li>
-                                <li><a href="v_detail_product.php"><i class="far fa-eye"></i></a></li>
+                                <li><a href="detail.php?id=<?php echo $value->id ?>"><i class="far fa-eye"></i></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="content">
-                        <h5><a href="v_detail_product.php?id=<?php echo $value->id ?>"><?php echo $value->ten_san_pham; ?> </a></h5>
-                        <span class="price"><?php echo number_format($value->don_gia); ?> VNĐ</span>
+                        <h5><a href="detail.php?id=<?php echo $value->id ?>"><?php echo $value->ten_san_pham; ?> </a></h5>
+                        <span class="price"><?php echo $value->don_gia ?> $</span>
                     </div>
                 </div>
             </div>

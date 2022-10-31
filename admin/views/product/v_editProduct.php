@@ -25,30 +25,11 @@
                         <img src="public/assets/images/logo-text.png" alt="homepage" class="light-logo" />
 
                     </span>
-                    <!-- Logo icon -->
-                    <!-- <b class="logo-icon"> -->
-                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                    <!-- Dark Logo icon -->
-                    <!-- <img src="public/assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
 
-                    <!-- </b> -->
-                    <!--End Logo icon -->
                 </a>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Toggle which is visible on mobile only -->
-                <!-- ============================================================== -->
                 <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Logo -->
-            <!-- ============================================================== -->
             <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                <!-- ============================================================== -->
-                <!-- toggle and nav items -->
-                <!-- ============================================================== -->
                 <ul class="navbar-nav float-left mr-auto">
                     <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                     <!-- ============================================================== -->
@@ -185,7 +166,7 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="p-t-30">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="home.php" aria-expanded="false"><span class="hide-menu">Views</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="product.php" aria-expanded="false"><span class="hide-menu">Products</span></a></li>
+                    <li class="sidebar-item"> <a style="background: #27A9E3; opacity: 1;" class="sidebar-link waves-effect waves-dark sidebar-link" href="product.php" aria-expanded="false"><span class="hide-menu">Products</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="user.php" aria-expanded="false"></i><span class="hide-menu">User</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comment.php" aria-expanded="false"><span class="hide-menu">Comments</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="addProduct.php" aria-expanded="false"><span class="hide-menu">Add Product</span></a></li>
@@ -312,51 +293,67 @@
                 </div>
                 <!-- Column -->
             </div>
+            <?php
+            // foreach($list_user as $key=> $value){ 
+            // echo "<pre>";
+            // echo $id;
+            // echo print_r($result);
+            ?>
             <div class="row">
                 <div class="col-md-12">
+
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <canvas  id="myChart" style="width:100%;max-width:600px;margin: auto;" ></canvas>
-                                <script>
-                                    var xValues = [ "Tổng sản phẩm", " Tổng người dùng", "Tổng bình luận","Loại sản phẩm"];
-                                    var yValues = [<?php echo $totalPrd ?>, <?php echo $totalUser ?>, <?php echo $totalCmt ?>,<?php echo $totalCate ?>]
-                                    var barColors = [
-                                        "#b91d47",
-                                        "#00aba9",
-                                        "#2b5797",
-                                        "#e8c3b9",
-            
-                                    ];
-                                    new Chart("myChart", {
-                                        type: "pie",
-                                        data: {
-                                            labels: xValues,
-                                            datasets: [{
-                                                backgroundColor: barColors,
-                                                data: yValues
-                                            }]
-                                        },
-                                        options: {
-                                            title: {
-                                                display: true,
-                                                text: ""
-                                            }
-                                        }
-                                    });
-                                </script>
-                            </div>
+                            <h1>Sửa sản phẩm</h1>
+                            <?php
+
+                            //  echo "<pre>";
+                            // echo print_r($product_detail);
+                            // die();
+                            ?>
+
+                            <form class="form" action="" method="POST" enctype="multipart/form-data">
+                                <input type="text" name="ten_san_pham" value="<?php echo  $product_detail->ten_san_pham ?>" placeholder="Tên sản phẩm">
+                                <!-- <input type="text" name="ma_loai" value="<?php //echo $product_detail->ma_loai ?>" placeholder="Mã loại"> -->
+                                <select name="chose" style="width: 100%;height: 40px; margin-bottom: 20px;">
+                                    <?php foreach ($read_prd_cate as $key => $value) { ?>
+                                        <option value="<?php echo $value->ma_loai ?>"><?php echo $value->ten_loai ?></option>
+                                    <?php } ?>
+                                </select>
+                                <textarea style="padding: 10px;" name="mo_ta_chi_tiet" placeholder="Mô tả" id="" cols="73" rows="10"><?php echo $product_detail->mo_ta_chi_tiet ?></textarea>
+                                <input type="text" name="don_gia" placeholder="Đơn giá" value="<?php echo $product_detail->don_gia ?>">
+                                <input type="text" name="giam_gia" placeholder="giảm giá" value="<?php echo $product_detail->giam_gia ?>">
+                                <label for="">Đổi ảnh</label>
+                                <input style="border: 1px solid #333;" type="file" name="f_hinh_anh" placeholder="Ảnh">
+                                <!-- <label for="">Hoặc giữ lại ảnh</label>
+                                <input type="hidden">
+                                 <img src="../public/layout/img/product/<?php echo $product_detail->hinh ?>" alt=""> -->
+                                <input type="submit" value="Sửa" name="btn-submit">
+                            </form>
                         </div>
                     </div>
+
                 </div>
             </div>
+            <?php
+            //  } 
+            ?>
         </div>
-        <?php
-        echo $totalUser;
-        ?>
         <footer class="footer text-center">
             All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
         </footer>
     </div>
 
 </div>
+<style>
+    .form {
+        width: 400px;
+    }
+
+    .form input {
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+        padding: 10px;
+    }
+</style>

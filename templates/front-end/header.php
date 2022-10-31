@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
@@ -43,7 +43,7 @@ session_start();
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-3 col-lg-4 d-none d-lg-block">
                         <div class="logo">
-                            <a href="index.html"><img src="public/layout/img/logo/logo.png" alt=""></a>
+                            <a href="index.php"><img src="public/layout/img/logo/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-5 col-md-6">
@@ -304,7 +304,7 @@ session_start();
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active menu-item-has-children has--mega--menu"><a href="#">Home</a>
+                                        <li class="active menu-item-has-children has--mega--menu"><a href="index.php">Home</a>
                                             <ul class="mega--menu--wrap scroll">
                                                 <li class="active">
                                                     <a href="index.html">
@@ -362,7 +362,7 @@ session_start();
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="has--mega--menu"><a href="#">Shop</a>
+                                        <li class="has--mega--menu"><a href="product.php">Shop</a>
                                             <ul class="mega-menu">
                                                 <li class="mega-menu-wrap">
                                                     <ul class="mega-menu-col">
@@ -387,7 +387,7 @@ session_start();
                                                     </ul>
                                                     <ul class="mega-menu-col sub-cat-post">
                                                         <li>
-                                                            <a href="shop-sidebar.html">
+                                                            <a href="productMan.php">
                                                                 <img src="public/layout/img/product/sub_menu_img01.jpg" alt="">
                                                                 <span class="btn">Man Shop</span>
                                                             </a>
@@ -395,7 +395,7 @@ session_start();
                                                     </ul>
                                                     <ul class="mega-menu-col sub-cat-post">
                                                         <li>
-                                                            <a href="shop-sidebar.html">
+                                                            <a href="productWoman.php">
                                                                 <img src="public/layout/img/product/sub_menu_img02.jpg" alt="">
                                                                 <span class="btn">Women’s Shop</span>
                                                             </a>
@@ -427,13 +427,13 @@ session_start();
                         <div class="mobile-menu">
                             <div class="close-btn"><i class="flaticon-targeting-cross"></i></div>
                             <nav class="menu-box">
-                                <div class="nav-logo"><a href="index.html"><img src="public/layout/img/logo/logo.png" alt="" title=""></a>
+                                <div class="nav-logo"><a href="index.php"><img src="public/layout/img/logo/logo.png" alt="" title=""></a>
                                 </div>
                                 <div class="menu-outer">
                                     <ul class="navigation">
-                                        <li class="active menu-item-has-children"><a href="#">Home</a>
+                                        <li class="active menu-item-has-children"><a href="index.php">Home</a>
                                             <ul class="submenu">
-                                                <li class="active"><a href="index.html">Home One</a></li>
+                                                <li class="active"><a href="index.php">Home One</a></li>
                                                 <li><a href="index-2.html">Home Two</a></li>
                                                 <li><a href="index-3.html">Home Three</a></li>
                                                 <li><a href="index-4.html">Home Four</a></li>
@@ -444,7 +444,7 @@ session_start();
                                                 <li><a href="index-9.html">Home Nine</a></li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item-has-children"><a href="#">Shop</a>
+                                        <li class="menu-item-has-children"><a href="product.php">Shop</a>
                                             <ul class="submenu">
                                                 <li><a href="shop.html">Shop Page</a></li>
                                                 <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
@@ -485,9 +485,9 @@ session_start();
         <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form>
-                        <input type="text" placeholder="Search here...">
-                        <button><i class="flaticon-search"></i></button>
+                    <form method="GET">
+                        <input type="text" name="search" placeholder="Search here..." >
+                        <button name="btn-search"><i class="flaticon-search"></i></button>
                     </form>
                 </div>
             </div>

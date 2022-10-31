@@ -1,9 +1,10 @@
 <?php
 @session_start();
 if (isset($_SESSION['admin'])) {
-    include ("controllers/c_product.php");
-    $product = new c_product();
-    $product->showproduct();
+
+include ("controllers/c_comment.php");
+$home = new c_comment();
+$home->index();
 } else {
     header("location:login.php");
 }

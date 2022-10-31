@@ -186,7 +186,7 @@
                 <ul id="sidebarnav" class="p-t-30">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="home.php" aria-expanded="false"><span class="hide-menu">Views</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="product.php" aria-expanded="false"><span class="hide-menu">Products</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="user.php" aria-expanded="false"></i><span class="hide-menu">User</span></a></li>
+                    <li class="sidebar-item"> <a style="background: #27A9E3; opacity: 1;" class="sidebar-link waves-effect waves-dark sidebar-link" href="user.php" aria-expanded="false"></i><span class="hide-menu">User</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comment.php" aria-expanded="false"><span class="hide-menu">Comments</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="addProduct.php" aria-expanded="false"><span class="hide-menu">Add Product</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="addUser.php" aria-expanded="false"><span class="hide-menu">Add User</span></a></li>
@@ -312,51 +312,50 @@
                 </div>
                 <!-- Column -->
             </div>
+            <?php 
+                // foreach($list_user as $key=> $value){ 
+                    // echo "<pre>";
+                    // echo $id;
+                    // echo print_r($result);
+                ?>
             <div class="row">
+                <?php
+                // echo "<pre>";
+                // echo print_r($user_detail);
+                // foreach($user_detail as $key => $value) { 
+                    // echo $value["ten_nguoi_dung"];
+                    ?>
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <canvas  id="myChart" style="width:100%;max-width:600px;margin: auto;" ></canvas>
-                                <script>
-                                    var xValues = [ "Tổng sản phẩm", " Tổng người dùng", "Tổng bình luận","Loại sản phẩm"];
-                                    var yValues = [<?php echo $totalPrd ?>, <?php echo $totalUser ?>, <?php echo $totalCmt ?>,<?php echo $totalCate ?>]
-                                    var barColors = [
-                                        "#b91d47",
-                                        "#00aba9",
-                                        "#2b5797",
-                                        "#e8c3b9",
-            
-                                    ];
-                                    new Chart("myChart", {
-                                        type: "pie",
-                                        data: {
-                                            labels: xValues,
-                                            datasets: [{
-                                                backgroundColor: barColors,
-                                                data: yValues
-                                            }]
-                                        },
-                                        options: {
-                                            title: {
-                                                display: true,
-                                                text: ""
-                                            }
-                                        }
-                                    });
-                                </script>
-                            </div>
+                            <form class="form" action="" method="POST">
+                                <input type="text" name="ten_nguoi_dung" value="<?php echo $user_detail -> ten_nguoi_dung   ?>">
+                                <input type="text" name="ten_dang_nhap" value="<?php echo $user_detail -> ten_dang_nhap  ?>">
+                                <input type="text" name="mat_khau" value="<?php echo $user_detail -> mat_khau ?>" >
+                                <input type="submit" name="btn-submit" value="Sửa">
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+           <?php
+            //  } 
+             ?>
         </div>
-        <?php
-        echo $totalUser;
-        ?>
         <footer class="footer text-center">
             All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
         </footer>
     </div>
 
 </div>
+<style>
+    .form {
+        width: 400px;
+    }
+    .form input {
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+        padding: 10px;
+    }
+</style>

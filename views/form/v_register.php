@@ -1,5 +1,3 @@
-
-
 <form method="POST" class="form-horizontal m-t-20" action="">
 <a class="logo" href=""><img src="public/layout/img//logo/logo.png" alt=""></a>
 <h3>Register</h3>

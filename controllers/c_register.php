@@ -14,7 +14,6 @@ class c_register {
         }
         $view = "views/form/v_register";
         include("templates/front-end/head1.php");
-        // include ("templates/front-end/layout.php");
     }
     public function showRe() {
         $m_register = new m_register();

@@ -313,47 +313,31 @@
                 <!-- Column -->
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <canvas  id="myChart" style="width:100%;max-width:600px;margin: auto;" ></canvas>
-                                <script>
-                                    var xValues = [ "Tổng sản phẩm", " Tổng người dùng", "Tổng bình luận","Loại sản phẩm"];
-                                    var yValues = [<?php echo $totalPrd ?>, <?php echo $totalUser ?>, <?php echo $totalCmt ?>,<?php echo $totalCate ?>]
-                                    var barColors = [
-                                        "#b91d47",
-                                        "#00aba9",
-                                        "#2b5797",
-                                        "#e8c3b9",
-            
-                                    ];
-                                    new Chart("myChart", {
-                                        type: "pie",
-                                        data: {
-                                            labels: xValues,
-                                            datasets: [{
-                                                backgroundColor: barColors,
-                                                data: yValues
-                                            }]
-                                        },
-                                        options: {
-                                            title: {
-                                                display: true,
-                                                text: ""
-                                            }
-                                        }
-                                    });
-                                </script>
-                            </div>
-                        </div>
+               <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table border="1" style="width: 100%; text-align: center;">
+                            <tr >
+                                <td>Nội dung</td>
+                                <td>Id user</td>
+                                <td>Id sản phẩm</td>
+                                <td>Thời gian</td>
+                            </tr>
+                            <?php foreach($cmt as $key => $value) { ?>
+                            <tr>
+                                <td><?php echo $value -> noi_dung ?></td>
+                                <td><?php echo $value -> id_user ?></td>
+                                <td><?php echo $value-> id_product  ?></td>
+                                <td><?php echo $value-> thoi_gian  ?></td>
+                                <td><a href="deleteCmt.php?id=<?php echo $value->id_bl ?>">Xóa</a></td>
+                            </tr>
+                            <?php } ?>
+                        </table>
                     </div>
                 </div>
+               </div>
             </div>
         </div>
-        <?php
-        echo $totalUser;
-        ?>
         <footer class="footer text-center">
             All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
         </footer>

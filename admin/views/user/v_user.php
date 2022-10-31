@@ -312,51 +312,42 @@
                 </div>
                 <!-- Column -->
             </div>
+            <!-- ============================================================== -->
+            <!-- Sales chart -->
+            <!-- ============================================================== -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <canvas  id="myChart" style="width:100%;max-width:600px;margin: auto;" ></canvas>
-                                <script>
-                                    var xValues = [ "Tổng sản phẩm", " Tổng người dùng", "Tổng bình luận","Loại sản phẩm"];
-                                    var yValues = [<?php echo $totalPrd ?>, <?php echo $totalUser ?>, <?php echo $totalCmt ?>,<?php echo $totalCate ?>]
-                                    var barColors = [
-                                        "#b91d47",
-                                        "#00aba9",
-                                        "#2b5797",
-                                        "#e8c3b9",
-            
-                                    ];
-                                    new Chart("myChart", {
-                                        type: "pie",
-                                        data: {
-                                            labels: xValues,
-                                            datasets: [{
-                                                backgroundColor: barColors,
-                                                data: yValues
-                                            }]
-                                        },
-                                        options: {
-                                            title: {
-                                                display: true,
-                                                text: ""
-                                            }
-                                        }
-                                    });
-                                </script>
-                            </div>
+                            <table style="margin: 0; width: 100%;text-align: center;" border="1" class="table">
+                                <tr>
+                                    <td>Tên người dùng</td>
+                                    <td>Tên đăng nhập</td>
+                                    <td>Mật khẩu</td>
+                                    <td>#</td>
+                                </tr>
+                                <?php foreach ($list_user as $key => $value) { ?>
+                                    <tr>
+                                        <td><?php echo $value->ten_nguoi_dung ?></td>
+                                        <td><?php echo $value->ten_dang_nhap ?></td>
+                                        <td><?php echo $value->mat_khau ?></td>
+                                        <td style="width: 150px;"><a style="padding: 0 5px;" class="act" href="delete_user.php?id=<?php echo $value->id ?>">Xóa</a> <a class="act" href="editUser.php?id=<?php echo $value->id ?>">Sửa</a></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php
-        echo $totalUser;
-        ?>
         <footer class="footer text-center">
             All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
         </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
     </div>
-
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
 </div>
